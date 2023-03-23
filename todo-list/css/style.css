@@ -55,32 +55,33 @@ main {
 .complete-button,
 .edit-button,
 .delete-button {
-    color: var(--branco);
-    background-color: var(--cor-destaque);
+    
+    background-color: var(--branco);
+    color: var(--cor-principal);
     border: none;
     border-radius: 50%;
     padding: .3rem .6rem;
 }
 
-.hide {
-    display: none;
-}
-
-.completed {
-    font-style: italic;
-    text-decoration: line-through;
+span  {
+    pointer-events: none;
 }
 
 @media (hover: hover) {
-    #add-button:hover,
-    .edit-button:hover {
+    #add-button:hover {
         color: var(--cor-principal);
         background-color: var(--branco);
     }
+    .edit-button:hover{
+        color: var(--branco);
+        background-color: var(--cor-destaque);
+    }
     .complete-button:hover {
+        color: var(--branco);
         background-color: green;
     }
     .delete-button:hover {
+        color: var(--branco);
         background-color: red;
     }
 }
@@ -131,7 +132,7 @@ header form {
 }
 
 .tarefa {
-    background-color: var(--cor-principal);
+    background-color: purple;
     border-radius: 1rem;
     box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.400);
     padding: 2rem;
@@ -151,6 +152,23 @@ header form {
     white-space: nowrap;
 }
 
+#add-button:active {
+    color: var(--cor-principal);
+    background-color: var(--branco);
+}
+.edit-button:active{
+    color: var(--branco);
+    background-color: var(--cor-destaque);
+}
+.complete-button:active {
+    color: var(--branco);
+    background-color: green;
+}
+.delete-button:active {
+    color: var(--branco);
+    background-color: red;
+}
+
 .container-buttons {
     display: flex;
     justify-content: center;
@@ -164,4 +182,24 @@ header form {
         justify-content: space-between;
         align-items: center;
     }
+}
+
+.hide {
+    display: none;
+}
+
+.completed {
+    background-color: var(--cor-principal);
+}
+
+.completed h3 {
+    font-style: italic;
+    text-decoration: line-through;
+}
+
+.completed .complete-button,
+.completed .edit-button,
+.completed .delete-button {
+    color: var(--branco);
+    background-color: var(--cor-destaque);
 }
