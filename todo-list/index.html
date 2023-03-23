@@ -11,15 +11,28 @@
 </head>
 <body>
     <main>
-        <header>
-            <h1>Lista de tarefas</h1>
-            <form id="form">
-                <input type="text" name="input-tarefa" id="input-tarefa" placeholder="Adicione uma nova tarefa" maxlength="100" autocomplete="off">
-                <button type="submit" id="add-button"><span class="material-symbols-outlined">add</span></button>
+        <div id="container-principal" class="">
+            <header>
+                <h1>Lista de tarefas</h1>
+                <form id="form">
+                    <input type="text" name="input-tarefa" id="input-tarefa" placeholder="Adicione uma nova tarefa" maxlength="100" autocomplete="off">
+                    <button type="submit" id="add-button"><span class="material-symbols-outlined">add</span></button>
+                </form>
+            </header>
+            <div id="lista-tarefas">
+
+            </div>
+        </div>
+
+        <div id="edit-form-container" class="hide">
+            <form id="edit-form">
+                <h1>Editar tarefa</h1>
+                <input type="text" name="edit-input" id="edit-input" placeholder="Digite sua nova tarefa">
+                <div id="container-edit-buttons">
+                    <button type="submit" id="confirm-edit-button">Editar</button>
+                    <button id="cancel-edit">Cancelar</button>
+                </div>
             </form>
-        </header>
-        <div id="lista-tarefas">
-  
         </div>
     </main>
 </body>

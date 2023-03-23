@@ -1,10 +1,18 @@
+const container_principal = document.querySelector("#container-principal")
 const form = document.querySelector("#form")
 const input_tarefa = document.querySelector("#input-tarefa")
 const add_tarefa_button = document.querySelector("#add-button")
 const lista_tarefas = document.querySelector("#lista-tarefas")
+const edit_form_container = document.querySelector("#edit-form-container")
+const confirm_edit_button = document.querySelector("#confirm-edit-button")
+const cancel_edit = document.querySelector("#cancel-edit")
+const edit_form = document.querySelector("#edit-form")
+const edit_input = document.querySelector("#edit-input")
 
 var tarefas = []
 var id_nova_tarefa = 0
+var id_tarefa_selecionada = 0
+var content_tarefa_edited = ""
 
 // Funções
 function adicionarItemTela(elemento) {
@@ -53,7 +61,7 @@ form.addEventListener("submit", (event) => {
     let descricao_tarefa = input_tarefa.value
 
     if (descricao_tarefa) {
-        ++id_nova_tarefa
+        id_nova_tarefa ++
         let nova_tarefa = {
             id: id_nova_tarefa,
             descricao: descricao_tarefa,
@@ -79,4 +87,16 @@ document.addEventListener("click", (event) => {
     else if (elemento.classList.contains("delete-button")) {
         tarefa.remove()
     }
+    else if (elemento.classList.contains("edit-button")) {
+        container_principal.classList.add("hide")
+        edit_form_container.classList.remove("hide")
+        let descricao_tarefa = tarefa.querySelector("h3")
+    }
+})
+
+cancel_edit.addEventListener("click", (event) => {
+    event.preventDefault()
+
+    container_principal.classList.remove("hide")
+    edit_form_container.classList.add("hide")
 })

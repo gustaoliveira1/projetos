@@ -55,7 +55,6 @@ main {
 .complete-button,
 .edit-button,
 .delete-button {
-    
     background-color: var(--branco);
     color: var(--cor-principal);
     border: none;
@@ -76,13 +75,16 @@ span  {
         color: var(--branco);
         background-color: var(--cor-destaque);
     }
-    .complete-button:hover {
+    .complete-button:hover, #confirm-edit-button:hover {
         color: var(--branco);
         background-color: green;
     }
-    .delete-button:hover {
+    .delete-button:hover,#cancel-edit:hover {
         color: var(--branco);
         background-color: red;
+    }
+    #confirm-edit-button:hover, #cancel-edit:hover {
+        color: var(--branco);
     }
 }
 
@@ -105,7 +107,7 @@ header form {
     align-items: center;
 }
 
-#input-tarefa {
+#input-tarefa, #edit-input {
     background-color: var(--cor-principal);
     color: var(--branco);
     border: none;
@@ -183,6 +185,28 @@ header form {
         align-items: center;
     }
 }
+
+/* Seção de editar tarefas */
+#edit-form h1 {
+    color: var(--branco);
+    font-size: 2.4rem;
+    font-weight: normal;
+}
+
+#edit-input {
+    width: 100%;
+    margin: 2rem 0;
+}
+
+#confirm-edit-button, #cancel-edit {
+    padding: .5rem;
+    transition: .3s;
+    border: none;
+    border-radius: .65rem;
+    margin-right: .5rem;
+}
+
+/* Eu precisei deixar isso aqui para funcionar */
 
 .hide {
     display: none;
