@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&family=Sriracha&display=swap');
+
+:root {
+    --fonte1: Verdana, Geneva, Tahoma, sans-serif;
+    --fonte2: 'Passion One', cursive;
+    --fonte3: 'Sriracha', cursive;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html, body {
+    min-height: 100vh;
+    background-color: lightgrey;
+    font-family: var(--fonte1);
+}
+
+a {
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+header {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+header > h1 {
+    font-family: var(--fonte2);
+    font-size: 10vw;
+    font-variant: small-caps;
+}
+
+header > p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.6vw;
+}
+
+section {
+    font-family: var(--fonte3);
+    font-size: 3.5vw;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    line-height: 2em;
+    padding-left: 30px;
+}
+
+section > p {
+    padding: 15px;
+}
+
+section.normal {
+    background-color: white;
+    color: black;
+}
+
+section.imagens {
+    color: white;
+    box-shadow: inset 6px 6px 10px 10px rgba(0, 0, 0, 0.418);
+}
+
+section.imagens > p {
+    display: inline-block;
+    padding: 7px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.400);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.568);
+}
+
+section#flor {
+    background-color: transparent;
+    background-image: url('../imagens/background001.jpg');
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+section#livro {
+    background-color: transparent;
+    background-image: url('../imagens/background002.jpg');
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
