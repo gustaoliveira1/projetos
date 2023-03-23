@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+:root {
+    --fonte: 'Poppins', sans-serif;
+
+    --cor-principal: #1f1f1f;
+    --cor-destaque: #393939;
+    --branco: white;
+}
+
+/* CSS geral do projeto */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fonte);
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    background-image: url("../img/background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+main {
+    background-color: var(--cor-destaque);
+    border-radius: 2rem;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.400);
+    width: 90%;
+    max-width: 500px;
+    margin: 5rem auto;
+    padding: 2rem;
+}
+
+#add-button,
+.complete-button,
+.edit-button,
+.delete-button {
+    width: 3.6rem;
+    height: 3.6rem;
+    transition: .3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.complete-button,
+.edit-button,
+.delete-button {
+    color: var(--branco);
+    background-color: var(--cor-destaque);
+    border: none;
+    border-radius: 50%;
+    padding: .3rem .6rem;
+}
+
+.hide {
+    display: none;
+}
+
+.completed {
+    font-style: italic;
+    text-decoration: line-through;
+}
+
+@media (hover: hover) {
+    #add-button:hover,
+    .edit-button:hover {
+        color: var(--cor-principal);
+        background-color: var(--branco);
+    }
+    .complete-button:hover {
+        background-color: green;
+    }
+    .delete-button:hover {
+        background-color: red;
+    }
+}
+
+/* header do projeto */
+
+header {
+    padding-bottom: 2rem;
+}
+
+header h1 {
+    color: var(--branco);
+    font-size: 2.4em;
+    font-weight: normal;
+    margin-bottom: 2rem;
+}
+
+header form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#input-tarefa {
+    background-color: var(--cor-principal);
+    color: var(--branco);
+    border: none;
+    border-radius: .65rem;
+    padding: .2rem .5rem;
+    width: 65%;
+    height: 3.6rem;
+    flex: .95;
+}
+
+#add-button {
+    color: var(--branco);
+    background-color: var(--cor-principal);
+    border: none;
+    border-radius: .65rem;
+    padding: .3rem .6rem;
+}
+
+/* Lista de tarefas em si */
+
+#lista-tarefas {
+    margin-top: 2rem;
+    min-height: 30rem;
+}
+
+.tarefa {
+    background-color: var(--cor-principal);
+    border-radius: 1rem;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.400);
+    padding: 2rem;
+    margin: 0 0 2rem;
+}
+
+.tarefa h3 {
+    color: var(--branco);
+    font-size: 1.6rem;
+    font-weight: normal;
+    text-align: center;
+    margin: 0 1rem 1rem;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    direction: ltr;
+    white-space: nowrap;
+}
+
+.container-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+@media screen and (min-width: 768px) {
+    .tarefa {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
