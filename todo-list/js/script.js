@@ -60,7 +60,7 @@ form.addEventListener("submit", (event) => {
 
     let descricao_tarefa = input_tarefa.value
 
-    if (descricao_tarefa) {
+    if (descricao_tarefa && descricao_tarefa.trim()) {
 
         estrutura_nova_tarefa = criarNovoItem(descricao_tarefa)
         adicionarItemTela(estrutura_nova_tarefa)
@@ -91,7 +91,7 @@ edit_form.addEventListener("submit", (event) => {
     
     nova_descricao = edit_input.value
 
-    if (nova_descricao) {
+    if (nova_descricao && nova_descricao.trim()) {
         tarefa_editada.innerText = nova_descricao
         toggleHide()
     }

@@ -154,23 +154,6 @@ header form {
     white-space: nowrap;
 }
 
-#add-button:active {
-    color: var(--cor-principal);
-    background-color: var(--branco);
-}
-.edit-button:active{
-    color: var(--branco);
-    background-color: var(--cor-destaque);
-}
-.complete-button:active {
-    color: var(--branco);
-    background-color: green;
-}
-.delete-button:active {
-    color: var(--branco);
-    background-color: red;
-}
-
 .container-buttons {
     display: flex;
     justify-content: center;
