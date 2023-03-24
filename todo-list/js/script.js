@@ -83,6 +83,7 @@ document.addEventListener("click", (event) => {
     else if (elemento.classList.contains("edit-button")) {
         toggleHide()
         tarefa_editada = tarefa.querySelector("h3")
+        edit_input.value = tarefa_editada.textContent
     }
 })
 
