@@ -6,7 +6,7 @@ export default function Banner() {
         <section className="banner">
             <div className="limitador-largura">
                 <p>Preços baixos em</p>
-                <h1>Óculos de grau e de sol</h1>
+                <h1>Óculos de <br/> grau e de sol</h1>
                 <p>Você só encontra aqui</p>
             </div>
         </section>

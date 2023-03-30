@@ -1,0 +1,14 @@
+footer {
+    color: #adadad;
+    background-color: #030303;
+}
+
+footer div {
+    margin: auto;
+    text-align: center;
+    padding: 2rem;
+}
+
+footer p {
+    font-size: 1.6em;
+}

@@ -1,7 +1,9 @@
 :root {
     font-size: 62.5%;
     --preto: #000;
-    --branco: #fff; 
+    --branco: #fff;
+    --cor-destaque: #f6f6f6;
+    --cor-destaque-dois: #f8f7ff;
 }
 
 * {
@@ -11,13 +13,27 @@
     font-family: 'Poppins', sans-serif;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 .limitador-largura {
     width: 90%;
     max-width: 1024px;
     margin: auto;
 }
 
+.container-texto {
+    margin: auto;
+    text-align: center;
+}
+
 .container-texto h2 {
     font-size: 3.6rem;
     text-transform: uppercase;
+}
+
+.container-texto p {
+    font-size: 1.6rem;
+    line-height: 3.2rem;
 }

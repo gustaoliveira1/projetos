@@ -1,4 +1,5 @@
 import React from "react";
+import './style.css'
 
 export default function Produtos() {
     return (
@@ -11,22 +12,22 @@ export default function Produtos() {
                 </div>
                 <div className="box-cards">
                     <div className="card-produto">
-                        <h3>Óculso de grau</h3>
+                        <h3>Óculos de grau</h3>
                         <img src="/img/oculos01.png"/>
                         <p>R$ 500,00</p>
                     </div>
                     <div className="card-produto">
-                        <h3>Óculso transition</h3>
+                        <h3>Óculos transition</h3>
                         <img src="/img/oculos02.png"/>
                         <p>R$ 750,00</p>
                     </div>
                     <div className="card-produto">
-                        <h3>Óculso de sol</h3>
+                        <h3>Óculos de sol</h3>
                         <img src="/img/oculos03.png"/>
                         <p>R$ 700,00</p>
                     </div>
                     <div className="card-produto">
-                        <h3>Óculso infantil</h3>
+                        <h3>Óculos infantil</h3>
                         <img src="/img/oculos04.png"/>
                         <p>R$ 500,00</p>
                     </div>    

@@ -1,0 +1,45 @@
+.sobre {
+    background-color: var(--cor-destaque-dois);
+    padding: 10rem 2rem;
+    text-align: center;
+}
+
+.container-sobre {
+    margin-top: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container-sobre img,
+.informacao-sobre {
+    width: 50%;
+    max-height: 30rem;
+    border: 1px solid #a2adad;
+}
+
+.container-sobre img {
+    object-fit: cover;
+}
+
+.informacao-sobre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--branco);
+    padding: 20px 25px;
+    flex: 1;
+}
+
+.informacao-sobre h2 {
+    font-size: 36px;
+    text-transform: uppercase;
+    font-family: 'Anybody', cursive;
+    letter-spacing: 5px;
+    line-height: 42px;
+}
+
+.informacao-sobre p {
+    font-size: 22px;
+    color: #4a4a4a;
+}

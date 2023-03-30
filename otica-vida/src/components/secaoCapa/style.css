@@ -19,10 +19,14 @@
 }
 
 .banner h1 {
+    font-size: 6em;
+    letter-spacing: .5rem;
+    line-height: 7rem;
     text-transform: uppercase;
 }
 
 .banner p {
     color: rgb(196, 196, 196);
     font-size: 3.6em;
+    margin: 2rem 0;
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import './style.css'
 
 export default function Sobre() {
     return (
@@ -10,11 +11,11 @@ export default function Sobre() {
                 </div>
                 <div className="container-sobre">
                     <img src="/img/loja.png" alt="Loja"/>
-                    <div className="container-texto informacao-sobre">
+                    <div className="informacao-sobre">
                         <h2>Nossas filiais</h2>
                         <p>Hoje temos mais de 20 filiais por todo o Brasil e na América</p>
                     </div>
-                    <div className="container-texto informacao-sobre">
+                    <div className="informacao-sobre">
                         <h2>Atendimento flexível</h2>
                         <p>Nossa equipe é treinada para te atender</p>
                     </div>
