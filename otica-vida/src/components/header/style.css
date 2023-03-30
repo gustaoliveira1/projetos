@@ -1,0 +1,22 @@
+header {
+    padding: 1rem 1.5rem;
+    width: 100%;
+}
+
+header div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 15rem;
+}
+
+nav a {
+    color: var(--preto);
+    font-size: 1.8em;
+    text-decoration: none;
+    margin: .5rem;
+    padding: .5rem;
+}

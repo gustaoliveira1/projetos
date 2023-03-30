@@ -1,0 +1,28 @@
+.banner {
+    background: linear-gradient(47deg, #000113 0%, #04061d 80%, #04061d 100%);
+    background-image: url('/public/img/capa.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 80vh;
+}
+
+.banner div {
+    color: var(--branco);
+    font-family: 'Anybody', cursive;
+    height: 100%;
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.banner h1 {
+    text-transform: uppercase;
+}
+
+.banner p {
+    color: rgb(196, 196, 196);
+    font-size: 3.6em;
+}

@@ -1,0 +1,23 @@
+:root {
+    font-size: 62.5%;
+    --preto: #000;
+    --branco: #fff; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.limitador-largura {
+    width: 90%;
+    max-width: 1024px;
+    margin: auto;
+}
+
+.container-texto h2 {
+    font-size: 3.6rem;
+    text-transform: uppercase;
+}
