@@ -30,3 +30,19 @@
     font-size: 3.6em;
     margin: 2rem 0;
 }
+
+@media screen and (max-width: 768px) {
+    .banner h1 {
+        font-size: 4em;
+        max-width: 35rem;
+    }
+    .banner p {
+        font-size: 2em;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .banner {
+        height: 89%;
+    }
+}
