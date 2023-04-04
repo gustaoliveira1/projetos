@@ -14,18 +14,19 @@
 .banner h1 {
     color: var(--branco);
     font-size: 7em;
+    text-align: center;
     text-transform: uppercase;
     text-shadow: 3px 3px 2px rgba(0, 0, 0, 400);
 }
 
-.sabores, 
+.sabores,
 .eventos,
 .sobre {
     display: flex;
     align-items: center;
 }
 
-.sabores img, 
+.sabores img,
 .eventos img,
 .sobre img {
     width: 50%;
@@ -56,4 +57,32 @@
 .container-texto p {
     font-size: 1.2rem;
     width: 56%;
+}
+
+@media screen and (max-width: 768px) {
+    .banner h1 {
+        font-size: 6em;
+    }
+    .sabores,
+    .sobre {
+        flex-direction: column;
+    }
+    .eventos {
+        flex-direction: column-reverse;
+    }
+    .sabores img,
+    .eventos img,
+    .sobre img {
+        width: 100%;
+    }
+    .container-texto {
+        width: 100%;
+        padding: 10rem 0;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .banner h1 {
+        font-size: 5em;
+    }
 }

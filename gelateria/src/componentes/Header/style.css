@@ -24,3 +24,9 @@ header nav a {
     text-decoration: none;
     margin-left: 4rem;
 }
+
+@media screen and (max-width: 425px) {
+    header div {
+        flex-direction: column;
+    }
+}
