@@ -1,0 +1,26 @@
+header {
+    width: 100%;
+    background-color: var(--amarelo);
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.300);
+}
+
+header div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header img {
+    width: 6rem;
+}
+
+header nav a {
+    color: var(--preto);
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 4rem;
+}

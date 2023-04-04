@@ -1,0 +1,59 @@
+.banner {
+    background-color: var(--amarelo);
+    background-image: url("/public/img/banner-home.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100vh;
+    margin-top: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner h1 {
+    color: var(--branco);
+    font-size: 7em;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 2px rgba(0, 0, 0, 400);
+}
+
+.sabores, 
+.eventos,
+.sobre {
+    display: flex;
+    align-items: center;
+}
+
+.sabores img, 
+.eventos img,
+.sobre img {
+    width: 50%;
+    object-fit: cover;
+}
+
+.container-texto {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-texto h2 {
+    font-size: 2.8em;
+    text-transform: uppercase;
+}
+
+.container-texto span {
+    font-size: 1.6em;
+    font-weight: bold;
+    font-style: italic;
+    margin-top: -0.75rem;
+    margin-bottom: 2rem;
+}
+
+.container-texto p {
+    font-size: 1.2rem;
+    width: 56%;
+}

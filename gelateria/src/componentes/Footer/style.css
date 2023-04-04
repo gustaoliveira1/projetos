@@ -1,0 +1,36 @@
+footer {
+    color: var(--branco);
+    background-color: var(--preto);
+}
+
+.contatos {
+    padding: 5rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.contatos img {
+    width: 9rem;
+}
+
+.contatos h3 {
+    font-size: 1.6em;
+    text-transform: uppercase;
+}
+
+.contatos p {
+    font-size: 1.2em;
+}
+
+.desenvolvedor p {
+    font-size: 1.2em;
+    text-align: center;
+    padding: 2rem;
+}
+
+.desenvolvedor p > a {
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: bold;
+}
