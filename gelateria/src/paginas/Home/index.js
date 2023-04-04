@@ -7,7 +7,7 @@ export const Home = () => {
         <div className="Home">
             <Header/>
             <main>
-                <section className="banner">
+                <section className="banner-home">
                     <div className="limitador-largura">
                         <h1>Sorvete artesanal</h1>
                     </div>

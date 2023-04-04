@@ -1,4 +1,4 @@
-.banner {
+.banner-home {
     background-color: var(--amarelo);
     background-image: url("/public/img/banner-home.png");
     background-position: center center;
@@ -9,14 +9,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.banner h1 {
-    color: var(--branco);
-    font-size: 7em;
-    text-align: center;
-    text-transform: uppercase;
-    text-shadow: 3px 3px 2px rgba(0, 0, 0, 400);
 }
 
 .sabores,
@@ -55,12 +47,12 @@
 }
 
 .container-texto p {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     width: 56%;
 }
 
 @media screen and (max-width: 768px) {
-    .banner h1 {
+    .banner-home h1 {
         font-size: 6em;
     }
     .sabores,
@@ -78,11 +70,12 @@
     .container-texto {
         width: 100%;
         padding: 10rem 0;
+        text-align: center;
     }
 }
 
 @media screen and (max-width: 425px) {
-    .banner h1 {
+    .banner-home h1 {
         font-size: 5em;
     }
 }

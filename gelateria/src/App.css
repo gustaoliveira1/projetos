@@ -20,3 +20,11 @@
     margin: auto;
     padding: 0 1rem;
 }
+
+h1 {
+    color: var(--branco);
+    font-size: 7em;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 2px rgba(0, 0, 0, 400);
+}
