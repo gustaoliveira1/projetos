@@ -28,3 +28,16 @@ h1 {
     text-transform: uppercase;
     text-shadow: 3px 3px 2px rgba(0, 0, 0, 400);
 }
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 6em;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    h1 {
+        font-size: 5em;
+    }
+}
+

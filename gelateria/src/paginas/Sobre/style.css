@@ -1,0 +1,38 @@
+.banner-sobre {
+    background-image: url("/public/img/banner-sobre.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    margin-top: 6rem;
+}
+
+.Sobre .container-texto {
+    width: 100%;
+    padding: 10rem 2rem;
+    text-align: center;
+}
+
+.Sobre .container-texto p {
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.container-imagens {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container-imagens img {
+    width: 50%;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+    .container-imagens img {
+        width: 100%;
+    }
+}

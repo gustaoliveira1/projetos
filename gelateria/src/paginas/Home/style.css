@@ -52,9 +52,6 @@
 }
 
 @media screen and (max-width: 768px) {
-    .banner-home h1 {
-        font-size: 6em;
-    }
     .sabores,
     .sobre {
         flex-direction: column;
@@ -71,11 +68,5 @@
         width: 100%;
         padding: 10rem 0;
         text-align: center;
-    }
-}
-
-@media screen and (max-width: 425px) {
-    .banner-home h1 {
-        font-size: 5em;
     }
 }
