@@ -1,106 +1,110 @@
-const container_principal = document.querySelector("#container-principal")
-const form = document.querySelector("#form")
-const input_tarefa = document.querySelector("#input-tarefa")
-const add_tarefa_button = document.querySelector("#add-button")
-const lista_tarefas = document.querySelector("#lista-tarefas")
-const edit_form_container = document.querySelector("#edit-form-container")
-const confirm_edit_button = document.querySelector("#confirm-edit-button")
-const cancel_edit = document.querySelector("#cancel-edit")
-const edit_form = document.querySelector("#edit-form")
-const edit_input = document.querySelector("#edit-input")
+const tarefaInput = document.querySelector("#input-tarefa")
+const tarefaBtnAdd = document.querySelector("#add-button")
+const tarefaAddForm = document.querySelector("#form")
+const listaTarefas = document.querySelector("#lista-tarefas")
+const delBtn = document.querySelectorAll(".delete-button")
+const containerForm = document.querySelector("#container-principal")
+const containerEditForm = document.querySelector("#edit-form-container")
+const confirmEditBtn = document.querySelector("#edit-form-container")
+const cancelEdit = document.querySelector("#cancel-edit")
+const editInput = document.querySelector("#edit-input")
 
-var tarefa_editada = null
+let tarefas = []
 
-// Funções
-function toggleHide() {
-    container_principal.classList.toggle("hide")
-    edit_form_container.classList.toggle("hide")
+const adicionarTarefaLista = () => {
+    const descricaoTarefa = tarefaInput.value
+    if (descricaoTarefa && descricaoTarefa.trim()) {
+        const novaTarefa = { descricao: descricaoTarefa, completa: false }
+        tarefas.push(novaTarefa)
+        tarefaInput.value = ""
+        tarefaInput.focus()
+    }
 }
 
-function adicionarItemTela(elemento) {
-    const firstChild = lista_tarefas.firstChild
-    lista_tarefas.insertBefore(elemento, firstChild)
+const renderizarListaTarefas = () => {
+    listaTarefas.innerHTML = ""
+    for (const tarefa of tarefas) {
+        const textoTarefa = tarefa.descricao
+        const novoItem = criarNovoItemHTML(textoTarefa)
+        listaTarefas.appendChild(novoItem)
+    }
 }
 
-function criarNovoItem(text) {
-    let container_tarefa = document.createElement("div")
-    container_tarefa.classList.add("tarefa")
+const criarNovoItemHTML = (conteudoTarefa) => {
+    let containerTarefa = document.createElement("div")
+    containerTarefa.classList.add("tarefa")
 
-    let tarefa = document.createElement("h3")
-    tarefa.innerText = text
-    container_tarefa.appendChild(tarefa)
+    let descricaoTarefa = document.createElement("h3")
+    descricaoTarefa.innerText = conteudoTarefa
+    containerTarefa.appendChild(descricaoTarefa)
 
-    let container_buttons = document.createElement("div")
-    container_buttons.classList.add("container-buttons")
+    let containerBtns = document.createElement("div")
+    containerBtns.classList.add("container-buttons")
 
-    let edit_button = document.createElement("button")
-    edit_button.classList.add("edit-button")
-    edit_button.innerHTML = '<span class="material-symbols-outlined">edit</span>'
-    container_buttons.appendChild(edit_button)
+    let editBtn = document.createElement("button")
+    editBtn.classList.add("edit-button")
+    editBtn.innerHTML = '<span class="material-symbols-outlined">edit</span>'
+    editBtn.addEventListener("click", () => toggleEditForm(containerTarefa))
+    containerBtns.appendChild(editBtn)
 
-    let complete_button = document.createElement("button")
-    complete_button.classList.add("complete-button")
-    complete_button.innerHTML = '<span class="material-symbols-outlined">done</span>'
-    container_buttons.appendChild(complete_button)
+    let completeBtn = document.createElement("button")
+    completeBtn.classList.add("complete-button")
+    completeBtn.innerHTML = '<span class="material-symbols-outlined">done</span>'
+    completeBtn.addEventListener("click", () => marcarTarefaComoCompleta(containerTarefa))
+    containerBtns.appendChild(completeBtn)
 
-    let delete_button = document.createElement("button")
-    delete_button.classList.add("delete-button")
-    delete_button.innerHTML = '<span class="material-symbols-outlined">delete</span>'
-    container_buttons.appendChild(delete_button)
-    
-    container_tarefa.appendChild(container_buttons)
+    let deleteBtn = document.createElement("button")
+    deleteBtn.classList.add("delete-button")
+    deleteBtn.innerHTML = '<span class="material-symbols-outlined">delete</span>'
+    deleteBtn.addEventListener("click", () => deletarTarefa(containerTarefa))
+    containerBtns.appendChild(deleteBtn)
 
-    return container_tarefa
+    containerTarefa.appendChild(containerBtns)
+
+    return containerTarefa
 }
 
-// Eventos
-form.addEventListener("submit", (event) => {
+const atualizarLocalStorage = () => {
+    localStorage.setItem("tarefas", JSON.stringify(tarefas))
+}
 
-    event.preventDefault()
+const onRefreshPage = () => {
+    tarefasString = localStorage.getItem("tarefas")
+    tarefas = JSON.parse(tarefasString)
+    renderizarListaTarefas()
+}
 
-    let descricao_tarefa = input_tarefa.value
-
-    if (descricao_tarefa && descricao_tarefa.trim()) {
-
-        estrutura_nova_tarefa = criarNovoItem(descricao_tarefa)
-        adicionarItemTela(estrutura_nova_tarefa)
-
-        input_tarefa.value = ""
-        input_tarefa.focus()
+const deletarTarefa = (itemLista) => {
+    for (const index in tarefas) {
+        const tarefaAlvo = itemLista.querySelector("h3")
+        const descricaoTarefaAlvo = tarefaAlvo.textContent
+        if (descricaoTarefaAlvo == tarefas[index].descricao) {
+            tarefas.splice(index, 1)
+        }
     }
+    atualizarLocalStorage()
+    itemLista.remove()
+}
+
+const marcarTarefaComoCompleta = (itemLista) => {
+    itemLista.classList.toggle("completed")
+}
+
+const toggleEditForm = () => {
+    containerForm.classList.toggle("hide")
+    containerEditForm.classList.toggle("hide")
+}
+
+onRefreshPage()
+
+tarefaAddForm.addEventListener("submit", event => {
+    event.preventDefault()
+    adicionarTarefaLista()
+    renderizarListaTarefas()
+    atualizarLocalStorage()
 })
 
-document.addEventListener("click", (event) => {
-    let elemento = event.target
-    let tarefa = elemento.closest(".tarefa")
-
-    if (elemento.classList.contains("complete-button")) {
-        tarefa.classList.toggle("completed")
-    }
-    else if (elemento.classList.contains("delete-button")) {
-        tarefa.remove()
-    }
-    else if (elemento.classList.contains("edit-button")) {
-        toggleHide()
-        tarefa_editada = tarefa.querySelector("h3")
-        edit_input.value = tarefa_editada.textContent
-    }
-})
-
-edit_form.addEventListener("submit", (event) => {
+cancelEdit.addEventListener("click", event => {
     event.preventDefault()
-    
-    nova_descricao = edit_input.value
-
-    if (nova_descricao && nova_descricao.trim()) {
-        tarefa_editada.innerText = nova_descricao
-        toggleHide()
-    }
-    edit_input.value = ""
-    edit_input.focus()
-})
-
-cancel_edit.addEventListener("click", (event) => {
-    event.preventDefault()
-    toggleHide()
+    toggleEditForm()
 })

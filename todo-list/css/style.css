@@ -31,7 +31,7 @@ body {
 
 
 main {
-    background-color: var(--cor-destaque);
+    background-color: #393939de;
     border-radius: 2rem;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.400);
     width: 90%;
