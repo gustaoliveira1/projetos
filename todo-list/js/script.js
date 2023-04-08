@@ -11,26 +11,30 @@ const editInput = document.querySelector("#edit-input")
 
 let tarefas = []
 
-const adicionarTarefaLista = () => {
-    const descricaoTarefa = tarefaInput.value
-    if (descricaoTarefa && descricaoTarefa.trim()) {
-        const novaTarefa = { descricao: descricaoTarefa, completa: false }
+const adicionarTarefa = () => {
+    const conteudoTarefa = tarefaInput.value
+    if (conteudoTarefa && conteudoTarefa.trim()) {
+        const novaTarefa = {
+            conteudo: conteudoTarefa,
+            isComplete: false
+        }
         tarefas.push(novaTarefa)
-        tarefaInput.value = ""
-        tarefaInput.focus()
     }
+    tarefaInput.value = ""; tarefaInput.focus()
 }
 
-const renderizarListaTarefas = () => {
+const renderizarTarefas = () => {
     listaTarefas.innerHTML = ""
     for (const tarefa of tarefas) {
-        const textoTarefa = tarefa.descricao
-        const novoItem = criarNovoItemHTML(textoTarefa)
-        listaTarefas.appendChild(novoItem)
+        const elementoRenderizado = criarNovoItemParaRender(tarefa.conteudo)
+        if (tarefa.isComplete) {
+            elementoRenderizado.classList.add("completed")
+        }
+        listaTarefas.appendChild(elementoRenderizado)
     }
 }
 
-const criarNovoItemHTML = (conteudoTarefa) => {
+const criarNovoItemParaRender = (conteudoTarefa) => {
     let containerTarefa = document.createElement("div")
     containerTarefa.classList.add("tarefa")
 
@@ -44,19 +48,18 @@ const criarNovoItemHTML = (conteudoTarefa) => {
     let editBtn = document.createElement("button")
     editBtn.classList.add("edit-button")
     editBtn.innerHTML = '<span class="material-symbols-outlined">edit</span>'
-    editBtn.addEventListener("click", () => toggleEditForm(containerTarefa))
     containerBtns.appendChild(editBtn)
 
     let completeBtn = document.createElement("button")
     completeBtn.classList.add("complete-button")
     completeBtn.innerHTML = '<span class="material-symbols-outlined">done</span>'
-    completeBtn.addEventListener("click", () => marcarTarefaComoCompleta(containerTarefa))
+    completeBtn.addEventListener("click", () => concluirTarefa(containerTarefa))
     containerBtns.appendChild(completeBtn)
 
     let deleteBtn = document.createElement("button")
     deleteBtn.classList.add("delete-button")
     deleteBtn.innerHTML = '<span class="material-symbols-outlined">delete</span>'
-    deleteBtn.addEventListener("click", () => deletarTarefa(containerTarefa))
+    deleteBtn.addEventListener("click", () => apagarTarefa(containerTarefa))
     containerBtns.appendChild(deleteBtn)
 
     containerTarefa.appendChild(containerBtns)
@@ -64,47 +67,35 @@ const criarNovoItemHTML = (conteudoTarefa) => {
     return containerTarefa
 }
 
-const atualizarLocalStorage = () => {
-    localStorage.setItem("tarefas", JSON.stringify(tarefas))
-}
+const apagarTarefa = (tarefaAlvo) => {
+    const conteudoTarefa = pegarConteudoTarefa(tarefaAlvo)
 
-const onRefreshPage = () => {
-    tarefasString = localStorage.getItem("tarefas")
-    tarefas = JSON.parse(tarefasString)
-    renderizarListaTarefas()
-}
-
-const deletarTarefa = (itemLista) => {
     for (const index in tarefas) {
-        const tarefaAlvo = itemLista.querySelector("h3")
-        const descricaoTarefaAlvo = tarefaAlvo.textContent
-        if (descricaoTarefaAlvo == tarefas[index].descricao) {
+        const descricaoTarefaLista = tarefas[index].conteudo
+        if (conteudoTarefa == descricaoTarefaLista) {
             tarefas.splice(index, 1)
+            tarefaAlvo.remove()
         }
     }
-    atualizarLocalStorage()
-    itemLista.remove()
 }
 
-const marcarTarefaComoCompleta = (itemLista) => {
-    itemLista.classList.toggle("completed")
+const concluirTarefa = (tarefaAlvo) => {
+    tarefaAlvo.classList.toggle("completed")
+
+    const descricaoTarefa = pegarConteudoTarefa(tarefaAlvo)
+
+    for (const index in tarefas) {
+        const descricaoTarefaLista = tarefas[index].conteudo
+        if (descricaoTarefa == descricaoTarefaLista) {
+            tarefas[index].isComplete = true
+        }
+    }
 }
 
-const toggleEditForm = () => {
-    containerForm.classList.toggle("hide")
-    containerEditForm.classList.toggle("hide")
-}
-
-onRefreshPage()
+const pegarConteudoTarefa = (tarefaAlvo) => tarefaAlvo.querySelector("h3").innerText
 
 tarefaAddForm.addEventListener("submit", event => {
     event.preventDefault()
-    adicionarTarefaLista()
-    renderizarListaTarefas()
-    atualizarLocalStorage()
-})
-
-cancelEdit.addEventListener("click", event => {
-    event.preventDefault()
-    toggleEditForm()
+    adicionarTarefa()
+    renderizarTarefas()
 })
