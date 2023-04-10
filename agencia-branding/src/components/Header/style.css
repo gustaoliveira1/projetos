@@ -1,0 +1,27 @@
+header {
+    padding: 1rem 2rem;
+}
+
+header .limitador-largura {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .limitador-largura > img {
+    max-width: 3.5rem;
+    width: 100%;
+}
+
+header .limitador-largura button {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .limitador-largura button img {
+    width: 2rem;
+}

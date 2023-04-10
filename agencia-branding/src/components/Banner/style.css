@@ -1,0 +1,39 @@
+.banner {
+    display: flex;
+}
+
+.img-banner,
+.destaque-banner {
+    width: 50%;
+    height: 100vh;
+}
+
+.img-banner {
+    background-image: url("/public/assets/banner.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.destaque-banner {
+    color: var(--cor-texto-destaque);
+    background-color: var(--cor-background-destaque);
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.destaque-banner p {
+    font-size: 1rem;
+    letter-spacing: .3rem;
+}
+
+.destaque-banner h2 {
+    font-size: 3.6rem;
+    font-weight: 500;
+}
+
+.destaque-banner span {
+    font-size: 3.6rem;
+    font-weight: 800;
+}
