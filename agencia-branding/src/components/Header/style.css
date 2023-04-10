@@ -28,11 +28,11 @@ header .limitador-largura button img {
 }
 
 .header-light-mode button {
+    border: 1px solid var(--cor-subtitulo);
     background-color: var(--branco);
 }
 
 .header-dark-mode {
-    border: 1px solid var(--cor-subtitulo);
     background-color: var(--cor-background-dark-mode);
 }
 

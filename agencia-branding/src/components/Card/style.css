@@ -48,6 +48,7 @@
 
 @media (hover:hover) {
     #card:hover {
+        color: var(--cor-subtitulo);
         background-color: var(--cor-destaque);
         border: 1px solid #eba628;
     }

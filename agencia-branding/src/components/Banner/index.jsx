@@ -1,8 +1,10 @@
 import "./style.css"
 
 export const Banner = (props)  => {
+    const theme = props.theme ? "banner-dark-mode" : "banner-light-theme"
+
     return (
-        <section id="banner" className={props.theme}>
+        <section id="banner" className={ theme }>
             <div className="img-banner"></div>
             <div className="destaque-banner">
                 <div className="container-texto-banner">
