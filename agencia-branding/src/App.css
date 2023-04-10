@@ -3,7 +3,7 @@
     --cor-destaque: #feb633;
     --cor-texto-destaque: #022144;
     --cor-subtitulo: #32333c;
-    --cor-subtitulo: #cccccc;
+    --cor-subtitulo-dark-mode: #cccccc;
     --cor-texto: #8a8fa3;
     --cor-texto-dark-mode: #9f9f9f;
     --cor-background-banner: #fafbfc;
@@ -25,8 +25,5 @@
     width: 100%;
     max-width: 1024px;
     margin: 0 auto;
-}
-
-.background-light-mode {
-    background-color: var(--branco);
+    padding: 0 2rem;
 }

@@ -1,0 +1,60 @@
+#card {
+    border: 1px solid var(--cor-texto);
+    width: calc(100% / 3);
+    padding: 7rem 3rem;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: .5s;
+}
+
+#card h4 {
+    font-size: 2.2rem;
+}
+
+#card p {
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+}
+
+#card .data {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+}
+
+#card .empresa {
+    margin: .5rem 0 2rem;
+}
+
+.card-light-mode h4 {
+    color: var(--cor-subtitulo);
+}
+
+.card-light-mode p {
+    color: var(--cor-texto);
+}
+
+.card-dark-mode {
+    border: 1px solid #ffffff0d;
+}
+
+.card-dark-mode h4 {
+    color: var(--branco);
+}
+
+.card-dark-mode p {
+    color: var(--cor-texto-dark-mode);
+}
+
+@media (hover:hover) {
+    #card:hover {
+        background-color: var(--cor-destaque);
+        border: 1px solid #eba628;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #card {
+        width: 100%;
+    }
+}

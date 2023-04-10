@@ -1,8 +1,8 @@
 import "./style.css"
 
-export const Banner = ()  => {
+export const Banner = (props)  => {
     return (
-        <section className="banner">
+        <section id="banner" className={props.theme}>
             <div className="img-banner"></div>
             <div className="destaque-banner">
                 <div className="container-texto-banner">

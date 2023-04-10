@@ -1,6 +1,8 @@
-export const Footer = () => {
+import "./style.css"
+
+export const Footer = (props) => {
     return (
-        <footer>
+        <footer className={props.theme}>
             <img src="/assets/logo.png" alt="Logo da agência" />
             <p>Ajudamos a criar uma personalidade digital construindo sua marca no ambiente online utilizando estratégias, ferrame  ntas e tecnologias personalizadas.</p>
             <div className="box-social">

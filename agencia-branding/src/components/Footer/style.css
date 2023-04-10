@@ -1,0 +1,50 @@
+footer {
+    padding: 5rem 0 0;
+    text-align: center;
+}
+
+footer > img {
+    width: 3.5rem;
+    margin-bottom: 3rem;
+}
+
+footer p {
+    font-size: 1.6rem;
+    max-width: 55rem;
+    margin: auto;
+    padding: 0 2rem;
+}
+
+footer p:first-of-type {
+    margin-bottom: 3rem;
+}
+
+footer p:last-of-type {
+    padding: 2rem 0;
+}
+
+footer span a {
+    color: var(--cor-destaque);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.box-social img {
+    width: 3.5rem;
+}
+
+.footer-light-mode {
+    background-color: var(--branco);
+}
+
+.footer-light-mode p {
+    color: var(--cor-texto);
+}
+
+.footer-dark-mode {
+    background-color: var(--cor-background-dark-mode);
+}
+
+.footer-dark-mode p {
+    color: var(--cor-texto-dark-mode);
+}

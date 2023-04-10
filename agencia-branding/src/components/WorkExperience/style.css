@@ -1,5 +1,4 @@
-.work-experience {
-    background-color: var(--cor-background-destaque);
+#work-experience {
     padding: 10rem 0;
 }
 
@@ -25,8 +24,34 @@
 }
 
 .container-texto p {
+    max-width: 55rem;
     text-align: center;
     font-size: 1.6rem;
     margin: auto;
     margin-bottom: 10rem;
+}
+
+.box-cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.work-experience-light-mode {
+    background-color: var(--cor-background-destaque);
+}
+
+.work-experience-light-mode h2 {
+    color: var(--cor-subtitulo);
+}
+
+.work-experience-light-mode p {
+    color: var(--cor-texto);
+}
+
+.work-experience-dark-mode {
+    background-color: var(--cor-background-destaque-dark-mode);
+}
+
+.work-experience-dark-mode h2, .work-experience-dark-mode .container-texto > p {
+    color: var(--cor-texto-dark-mode);
 }

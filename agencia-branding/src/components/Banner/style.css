@@ -1,4 +1,4 @@
-.banner {
+#banner {
     display: flex;
 }
 
@@ -36,4 +36,21 @@
 .destaque-banner span {
     font-size: 3.6rem;
     font-weight: 800;
+}
+
+.banner-light-mode {
+    background-color: var(--branco);
+}
+
+.banner-dark-mode {
+    background-color: var(--cor-background-dark-mode);
+}
+
+@media  screen and (max-width: 768px) {
+    .img-banner {
+        display: none;
+    }
+    .destaque-banner {
+        width: 100%;
+    }
 }
