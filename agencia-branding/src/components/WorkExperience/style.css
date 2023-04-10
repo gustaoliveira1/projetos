@@ -1,0 +1,32 @@
+.work-experience {
+    background-color: var(--cor-background-destaque);
+    padding: 10rem 0;
+}
+
+.container-texto {
+    text-align: center;
+}
+
+.container-texto h2 {
+    font-size: 3.6rem;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 5rem;
+}
+
+.container-texto h2::before {
+    content: "";
+    background-color: var(--cor-destaque);
+    height: 3px;
+    width: 8rem;
+    position: absolute;
+    bottom: -40%;
+    left: 40%;
+}
+
+.container-texto p {
+    text-align: center;
+    font-size: 1.6rem;
+    margin: auto;
+    margin-bottom: 10rem;
+}
