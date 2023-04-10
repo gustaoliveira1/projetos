@@ -2,13 +2,25 @@ import { Header } from "../../components/Header/"
 import { Banner } from "../../components/Banner/"
 import { WorkExperienceSection } from "../../components/WorkExperience"
 import { Footer } from "../../components/Footer"
-import { useCallback, useState } from "react"
+import { useEffect, useState } from "react"
 
 const LandingPage = () => {
     const [isDarkTheme, setIsDarkTheme] = useState(false)
 
+    useEffect(() => getSavedThemeAtLocalStorage())
+
     const changeTheme = () => {
         setIsDarkTheme(!isDarkTheme)
+        saveThemeInLocalStorage()
+    }
+
+    const saveThemeInLocalStorage = () => {
+        localStorage.setItem("isDarkTheme", JSON.stringify(!isDarkTheme))
+    }
+
+    const getSavedThemeAtLocalStorage = () => {
+        const theme = JSON.parse(localStorage.getItem("isDarkTheme"))
+        setIsDarkTheme(theme)
     }
 
     return (
